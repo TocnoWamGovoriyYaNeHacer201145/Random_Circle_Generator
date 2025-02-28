@@ -18,7 +18,7 @@ if mode == 'custom':
         left(l)
         right(r)
         backward(b)
-if mode == 'random':
+elif mode == 'random':
     # Turtle setup
     turtle.color("black")
     turtle.speed(0)
