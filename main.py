@@ -1,6 +1,6 @@
 from turtle import *
 from random import *
-mode = input(f'Enter mode random/custom:\n>>> ')
+mode = input(f'Enter mode random/custom/exit:\n>>> ')
 while True:
     if mode in ['r','random','c','custom']:
         if mode in ['custom','c']:
@@ -14,7 +14,7 @@ while True:
             hideturtle()
             # Random settings
             f, l, r, b = randrange(-80, fb_settings), randrange(-360, lr_settings), randrange(-80, fb_settings), randrange(-80, fb_settings)
-            rrange = randint(10000, 1000000)
+            rrange = randint(1000, 1000000)
             for i in range(rrange):
                 forward(f)
                 left(l)
@@ -35,6 +35,9 @@ while True:
                 right(r)
                 backward(b)
         exitonclick()
-    elif mode not in ['r','random','c','custom']:
-        print('This mode does not exists, select one that exists!\n1. Random - r or random\n2. Custom - c or custom')
-        mode = input('Enter mode:')
+        break  
+    elif mode in ['exit']:
+        break
+    elif mode not in ['r','random','c','custom','exit']:
+        print('This mode does not exists, select one that exists!\n1. Random - r or random\n2. Custom - c or custom\n3. Exit - exit')
+        mode = input('Enter mode:\n>>> ')
